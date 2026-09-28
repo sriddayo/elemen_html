@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Warna CSS</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .warna {
+            width: 150px;
+            height: 150px;
+            border-radius: 15px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .merah {
+            background-color: red;
+        }
+
+        .biru {
+            background-color: blue;
+        }
+
+        .hijau {
+            background-color: green;
+        }
+
+        .kuning {
+            background-color: yellow;
+            color: black;
+        }
+
+        .ungu {
+            background-color: purple;
+        }
+
+        .warna:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Belajar Warna CSS</h1>
+    <p>Berikut adalah contoh penggunaan warna dalam CSS:</p>
+
+    <div class="container">
+        <div class="warna merah">Merah</div>
+        <div class="warna biru">Biru</div>
+        <div class="warna hijau">Hijau</div>
+        <div class="warna kuning">Kuning</div>
+        <div class="warna ungu">Ungu</div>
+    </div>
+
+</body>
+</html>
