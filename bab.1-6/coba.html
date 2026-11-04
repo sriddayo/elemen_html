@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPL Expo & Showcase 2026</title>
+
+    <style>
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #263445;
+        }
+
+        /* ===== NAVBAR ===== */
+        header {
+            background: #102542;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            color: white;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #00d4ff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 22px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00d4ff;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 550px;
+            background: linear-gradient(120deg, #102542, #087eaa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 130px 20px 70px;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #00d4ff;
+        }
+
+        .hero p {
+            font-size: 17px;
+            line-height: 1.8;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background: #00d4ff;
+            color: #102542;
+            padding: 13px 28px;
+            border-radius: 7px;
+            text-decoration: none;
+            margin-top: 25px;
+            font-weight: bold;
+        }
+
+        .hero-btn:hover {
+            background: white;
+        }
+
+        /* ===== SECTION UMUM ===== */
+        section {
+            padding: 75px 8%;
+            scroll-margin-top: 75px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            color: #102542;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: #718096;
+        }
+
+        /* ===== KATALOG KARYA ===== */
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 22px;
+        }
+
+        .category {
+            display: inline-block;
+            background: #d9f7ff;
+            color: #007b9e;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 10px;
+            color: #102542;
+        }
+
+        .project-content p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #718096;
+        }
+
+        .project-content h4 {
+            margin-top: 15px;
+            font-size: 13px;
+            color: #087eaa;
+        }
+
+        /* ===== JADWAL ===== */
+        .schedule {
+            background: white;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #102542;
+            color: white;
+            padding: 16px;
+        }
+
+        td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        tr:hover {
+            background: #eaf8fc;
+        }
+
+        /* ===== VIDEO DEMO ===== */
+        .video-container {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        /* ===== FORM VOTING ===== */
+        .voting {
+            background: #eaf4fa;
+        }
+
+        .form-container {
+            max-width: 600px;
+            background: white;
+            padding: 35px;
+            margin: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #102542;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccd5df;
+            border-radius: 7px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #00a9d6;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 110px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: #087eaa;
+            border: none;
+            color: white;
+            border-radius: 7px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #102542;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #102542;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        footer span {
+            color: #00d4ff;
+        }
+
+        footer p {
+            margin: 7px 0;
+            font-size: 14px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .project-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            header {
+                padding: 15px 4%;
+            }
+
+            nav a {
+                margin-left: 10px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0;
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .project-container {
+                grid-template-columns: 1fr;
+            }
+
+            .video-container iframe {
+                height: 230px;
+            }
+
+            .form-container {
+                padding: 22px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <header>
+        <div class="logo">RPL <span>EXPO</span></div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#karya">Katalog Karya</a>
+            <a href="#jadwal">Jadwal</a>
+            <a href="#video">Video Demo</a>
+            <a href="#voting">Voting</a>
+        </nav>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+        <div>
+            <h1>RPL EXPO <span>2026</span></h1>
+
+            <p>
+                Selamat Datang di RPL Expo & Showcase.
+                Tempat menampilkan kreativitas, inovasi,
+                dan hasil karya terbaik siswa Rekayasa
+                Perangkat Lunak.
+            </p>
+
+            <a href="#karya" class="hero-btn">
+                Lihat Karya Siswa
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== KATALOG KARYA ===== -->
+    <section id="karya">
+
+        <div class="section-title">
+            <h2>Katalog Karya Siswa</h2>
+            <p>Jelajahi berbagai proyek kreatif siswa RPL.</p>
+        </div>
+
+        <div class="project-container">
+
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600"
+                alt="Website Sekolah">
+
+                <div class="project-content">
+                    <span class="category">Website</span>
+                    <h3>Sistem Informasi Sekolah</h3>
+                    <p>
+                        Website untuk mengelola informasi
+                        sekolah, data siswa, dan akademik.
+                    </p>
+                    <h4>Oleh: Andi Pratama</h4>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600"
+                alt="Aplikasi Mobile">
+
+                <div class="project-content">
+                    <span class="category">Mobile App</span>
+                    <h3>Aplikasi Kasir Digital</h3>
+                    <p>
+                        Aplikasi untuk membantu transaksi
+                        penjualan dan pengelolaan stok barang.
+                    </p>
+                    <h4>Oleh: Budi Santoso</h4>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600"
+                alt="E-Commerce">
+
+                <div class="project-content">
+                    <span class="category">Website</span>
+                    <h3>E-Commerce Online</h3>
+                    <p>
+                        Platform penjualan online untuk
+                        memasarkan produk secara digital.
+                    </p>
+                    <h4>Oleh: Citra Amelia</h4>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=600"
+                alt="Perpustakaan">
+
+                <div class="project-content">
+                    <span class="category">Web App</span>
+                    <h3>Sistem Perpustakaan</h3>
+                    <p>
+                        Aplikasi pengelolaan data buku,
+                        peminjaman, dan pengembalian.
+                    </p>
+                    <h4>Oleh: Dika Saputra</h4>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600"
+                alt="Dashboard">
+
+                <div class="project-content">
+                    <span class="category">Dashboard</span>
+                    <h3>Dashboard Monitoring</h3>
+                    <p>
+                        Sistem monitoring data dengan
+                        tampilan grafik dan laporan.
+                    </p>
+                    <h4>Oleh: Rina Putri</h4>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600"
+                alt="Aplikasi Pendidikan">
+
+                <div class="project-content">
+                    <span class="category">Education App</span>
+                    <h3>Aplikasi Belajar Online</h3>
+                    <p>
+                        Aplikasi pembelajaran digital
+                        untuk membantu kegiatan belajar.
+                    </p>
+                    <h4>Oleh: Fajar Ramadhan</h4>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== JADWAL PRESENTASI ===== -->
+    <section class="schedule" id="jadwal">
+
+        <div class="section-title">
+            <h2>Jadwal Presentasi Karya</h2>
+            <p>Jadwal kegiatan presentasi proyek siswa.</p>
+        </div>
+
+        <div class="table-container">
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Siswa</th>
+                        <th>Judul Karya</th>
+                        <th>Tanggal</th>
+                        <th>Waktu</th>
+                        <th>Ruangan</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Andi Pratama</td>
+                        <td>Sistem Informasi Sekolah</td>
+                        <td>10 November 2026</td>
+                        <td>08.00</td>
+                        <td>Lab RPL 1</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>Budi Santoso</td>
+                        <td>Aplikasi Kasir Digital</td>
+                        <td>10 November 2026</td>
+                        <td>09.00</td>
+                        <td>Lab RPL 2</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>Citra Amelia</td>
+                        <td>E-Commerce Online</td>
+                        <td>10 November 2026</td>
+                        <td>10.00</td>
+                        <td>Lab RPL 1</td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td>Dika Saputra</td>
+                        <td>Sistem Perpustakaan</td>
+                        <td>10 November 2026</td>
+                        <td>11.00</td>
+                        <td>Lab RPL 2</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </section>
+
+    <!-- ===== VIDEO DEMO ===== -->
+    <section id="video">
+
+        <div class="section-title">
+            <h2>Video Demo Karya</h2>
+            <p>Saksikan demonstrasi hasil karya siswa RPL.</p>
+        </div>
+
+        <div class="video-container">
+
+            <iframe
+                src="https://www.youtube.com/embed/VIDEO_ID"
+                title="Video Demo Karya Siswa"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+    </section>
+
+    <!-- ===== FORM VOTING ===== -->
+    <section class="voting" id="voting">
+
+        <div class="section-title">
+            <h2>Voting Karya Favorit</h2>
+            <p>
+                Berikan penilaian dan pilih karya
+                terbaik menurut kamu!
+            </p>
+        </div>
+
+        <div class="form-container">
+
+            <form action="#" method="post">
+
+                <div class="form-group">
+                    <label>Nama Pengunjung</label>
+                    <input
+                        type="text"
+                        name="nama"
+                        placeholder="Masukkan nama kamu"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label>Pilih Karya Favorit</label>
+
+                    <select name="karya" required>
+                        <option value="">-- Pilih Karya --</option>
+                        <option>Sistem Informasi Sekolah</option>
+                        <option>Aplikasi Kasir Digital</option>
+                        <option>E-Commerce Online</option>
+                        <option>Sistem Perpustakaan</option>
+                        <option>Dashboard Monitoring</option>
+                        <option>Aplikasi Belajar Online</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Berikan Nilai (1-10)</label>
+
+                    <select name="nilai" required>
+                        <option value="">-- Pilih Nilai --</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Komentar / Masukan</label>
+
+                    <textarea
+                        name="komentar"
+                        placeholder="Tuliskan komentar kamu...">
+                    </textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Kirim Penilaian
+                </button>
+
+            </form>
+
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+
+        <div class="logo">
+            RPL <span>EXPO 2026</span>
+        </div>
+
+        <p>Rekayasa Perangkat Lunak</p>
+
+        <p>
+            Pameran Karya Akhir dan Inovasi Siswa
+        </p>
+
+        <p>
+            &copy; 2026 RPL Expo & Showcase.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>

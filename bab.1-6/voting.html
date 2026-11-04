@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Karya - RPL Expo & Showcase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigasi Fixed -->
+    <header class="navbar-fixed">
+        <div class="logo">RPL EXPO 2026</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="katalog.html">Katalog Karya</a></li>
+                <li><a href="jadwal.html">Jadwal Presentasi</a></li>
+                <li><a href="voting.html">Voting Karya</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Konten Form Voting -->
+    <section class="container">
+        <h2>Form Penilaian & Voting Karya Favorit</h2>
+        <form action="#" method="POST" class="voting-form">
+            <label for="namaPemilih">Nama Pengunjung:</label>
+            <input type="text" id="namaPemilih" name="nama" required placeholder="Masukkan nama Anda">
+
+            <label for="pilihanKarya">Pilih Karya Favorit:</label>
+            <select id="pilihanKarya" name="karya" required>
+                <option value="">-- Pilih Karya --</option>
+                <option value="Sistem Kasir UMKM">Sistem Kasir UMKM</option>
+                <option value="Aplikasi Edukasi Anak">Aplikasi Edukasi Anak</option>
+            </select>
+
+            <label for="skor">Berikan Skor (1-100):</label>
+            <input type="number" id="skor" name="skor" min="1" max="100" required>
+
+            <button type="submit" class="btn-submit">Kirim Voting</button>
+        </form>
+    </section>
+
+</body>
+</html>
