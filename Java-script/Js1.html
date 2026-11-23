@@ -1,0 +1,26 @@
+<!-- 1. INTERNAL JavaScript: di dalam tag <script> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Belajar JS</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+
+    <!-- Letakkan <script> sebelum </body> agar HTML dimuat dulu -->
+    <script>
+        console.log('Halo dari JavaScript!');
+        alert('Selamat datang!');
+    </script>
+</body>
+</html>
+
+<!-- 2. EKSTERNAL JavaScript: file .js terpisah -->
+<body>
+    <h1>Hello World</h1>
+    <!-- src berisi path ke file JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+/* Isi file script.js */
+console.log('Kode dari file eksternal!');
